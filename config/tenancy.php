@@ -33,7 +33,7 @@ return [
         'hostname' => \Hyn\Tenancy\Models\Hostname::class,
 
         // Must implement \Hyn\Tenancy\Contracts\Website
-        'website' => \Hyn\Tenancy\Models\Website::class
+        'website' => \Hyn\Tenancy\Models\Website::class,
     ],
     /**
      * The package middleware. Removing a middleware here will disable it.
@@ -108,6 +108,7 @@ return [
          * contained within.
          *
          * @see
+         *
          * @info set to true to enable.
          */
         'auto-delete-tenant-directory' => false,
@@ -180,6 +181,7 @@ return [
          * is set up automatically by this package.
          *
          * @see src/Database/Connection.php
+         *
          * @var system-connection-name The database connection name to use for the global/system database.
          * @var tenant-connection-name The database connection name to use for the tenant database.
          */
@@ -229,8 +231,8 @@ return [
          * @warn specify a valid fully qualified class name.
          */
         'tenant-seed-class' => false,
-//      eg an admin seeder under `app/Seeders/AdminSeeder.php`:
-//        'tenant-seed-class' => App\Seeders\AdminSeeder::class,
+        //      eg an admin seeder under `app/Seeders/AdminSeeder.php`:
+        //        'tenant-seed-class' => App\Seeders\AdminSeeder::class,
 
         /**
          * Automatically generate a tenant database based on the random id of the
@@ -246,7 +248,6 @@ return [
          * @info Useful in case you use root or another predefined user to access the
          *       tenant database.
          * @info Only creates in case tenant databases are set to be created.
-         *
          * @info set to false to disable.
          */
         'auto-create-tenant-database-user' => true,
@@ -258,7 +259,6 @@ return [
          *       can set (for example AWS RDS).
          * @info These privileges are only used in case tenant database users
          *       are set to be created.
-         *
          * @info null by default means "ALL PRIVILEGES". Override with a list
          *       of privileges as a string, e.g. 'SELECT, UPDATE'.
          */
@@ -296,10 +296,10 @@ return [
          * @info Useful for overriding the connection of third party packages.
          */
         'force-tenant-connection-of-models' => [
-//            App\User::class
+            //            App\User::class
         ],
         'force-system-connection-of-models' => [
-//            App\User::class
+            //            App\User::class
         ],
     ],
 
@@ -398,6 +398,7 @@ return [
              * Specify a namespace to use with which to load the views.
              *
              * @eg setting `tenant` will allow you to use `tenant::some.blade.php`
+             *
              * @info set to null to add to the global namespace.
              */
             'namespace' => null,
@@ -407,6 +408,6 @@ return [
              * make it override the global views. Disable by setting to false.
              */
             'override-global' => true,
-        ]
-    ]
+        ],
+    ],
 ];
