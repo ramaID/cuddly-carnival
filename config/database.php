@@ -4,6 +4,8 @@ use Illuminate\Support\Str;
 
 return [
 
+    'wbs_main' => env('DB_SCHEMA_LARTEN_TENANT', 'larten_tenant'),
+
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
@@ -34,6 +36,21 @@ return [
     */
 
     'connections' => [
+
+        'system' => [
+            'driver' => 'pgsql',
+            'host' => env('TENANCY_HOST', '127.0.0.1'),
+            'port' => env('TENANCY_PORT', '5432'),
+            'database' => env('TENANCY_DATABASE', 'larten'),
+            'username' => env('TENANCY_USERNAME', 'larten'),
+            'password' => env('TENANCY_PASSWORD', 'lartenPassword'),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ],
 
         'sqlite' => [
             'driver' => 'sqlite',
